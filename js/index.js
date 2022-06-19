@@ -1,9 +1,10 @@
 const p = (str) => {console.log(str)}
 //js ingredients
 //search button to add an eventListener to it.
+p(window.innerWidth)
 const form = document.querySelector('#actionButton')
 //The div that the pictures will be added to.
-resaltsPanal = document.getElementById('container')
+resaltsPanal = document.getElementById('item-container')
 //Used to end the slideshow
 let stopSlideWhow = false 
 
@@ -19,10 +20,13 @@ const slideShow = (slideDeck, slideIndex) => {
     //This will remove the last slide, but if it run the first time, there is no "last slide" and the - 1 will crash it.
     if (slideIndex > 0) {slideDeck[slideIndex-1].style.display = 'none'}
     //Setting this to block will undo the display = none on all img
+    const container = document.getElementById('container')
+    container.classList.remove('loading')
     slideDeck[slideIndex].style.display = 'block'
+    // slideDeck[slideIndex].style.justifyContent = 'center'
     //This set up for the next slide in the deck before calling itself again.
     slideIndex++ 
-    setTimeout(slideShow, 3000, slideDeck, slideIndex)
+    setTimeout(slideShow, 3000, slideDeck, slideIndex) //3000
 }
 const onPicterFailure = () => {console.log('This has FAILED')}
 

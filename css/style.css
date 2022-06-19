@@ -7,23 +7,41 @@ img {
     /* Hieght is set to the size I want. width auto to keep image proportion to the set hight.*/
     /*  */
     height: 200px;
-    width: auto;
-    
+    /* width: auto; */
+    /* margin: 0 auto; */
     /* used to make the slide work. */
-    animation-name: slide;
-    animation-duration: 3s; 
+}
+#item-container {
+    /* animation-name: slide;
+    animation-duration: 3s;  */
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    /* display: inline; */
+    /* position: absolute; */
+    /* left: 50%; */
 }
 /* -100% has the image start directly on the left side off the screen regardless of the width of the picture. Sinse the width of the pictures are diffent everytime this is good. */
 /* From what I cant tell em is relative to the container size. This fetl better. though the number is made up. 
 this may brake on other size screens */
 @keyframes slide {
     from{ transform: translateX(-100%)}
-    to{ transform: translateX(90em)}
+    /* to{ transform: translateX(90em)} */
+    to{ transform: translateX(100%)}
   }
 
 /* Give the container hight so when it page is firsst loaded it has the right layout for when the img tag is put inside it from the DOM */
 #container {
     height: 200px;
+    transition-duration: 3000ms;
+    /* transform: translate(100%); */
+    /* animation-name: slide;
+    animation-duration: 3s;  */
+}
+.loading {
+    transform: translate(100%);
+
 }
 
 form {
