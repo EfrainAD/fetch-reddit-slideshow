@@ -1,4 +1,5 @@
 const p = (str) => {console.log(str)}
+p(window.innerWidth)
 //js ingredients
 //search button to add an eventListener to it.
 const form = document.querySelector('#actionButton')
